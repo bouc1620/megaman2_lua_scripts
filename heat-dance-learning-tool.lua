@@ -19,7 +19,7 @@ create_training_display = function()
 	last_delay_value = 0
 
 	return function()
-    -- comment out this function call to remove invulnerability
+		-- comment out this function call to remove invulnerability
 		write_max_hp()
 
 		is_hit_frame = not hit_registered and memory.readbyte(0x00B4) == 0x0001
@@ -53,7 +53,7 @@ create_training_display = function()
 		curr_inv_frame = math.max(curr_inv_frame - 1, 0)
 		last_delay_value = curr_delay_value
 
-    -- comment out this block if you wish to remove the delay counter over Heat Man
+		-- comment out this block if you wish to remove the delay counter over Heat Man
 		if memory.readbyte(0x0421) >= 0x80 then
 			local x = memory.readbyte(0x0441) * 256 + memory.readbyte(0x0461) - memory.readbyte(0x20) * 256 - memory.readbyte(0x1F)
 			local y = memory.readbyte(0x04A1)
